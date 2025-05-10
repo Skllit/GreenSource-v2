@@ -7,14 +7,10 @@ import {
   Settings, 
   Package, 
   ShoppingBag, 
-  IndianRupee, 
   AlertCircle, 
   ArrowUpRight, 
   ArrowDownRight,
-  CheckCircle2,
-  XCircle,
-  Clock,
-  Truck
+  CheckCircle2
 } from "lucide-react";
 
 const HomePage: React.FC = () => {
