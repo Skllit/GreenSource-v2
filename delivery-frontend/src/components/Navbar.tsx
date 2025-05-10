@@ -91,12 +91,12 @@ export default function Navbar() {
                 {user.username ? (
                   <>
                     <User className="w-5 h-5" />
-                    <span>{user.username}</span>
+                  <span>{user.username}</span>
                   </>
                 ) : (
                   <>
                     <LogOut className="w-5 h-5" />
-                    <span>Login</span>
+                  <span>Login</span>
                   </>
                 )}
               </NavLink>
@@ -192,12 +192,12 @@ export default function Navbar() {
                 {user.username ? (
                   <>
                     <User className="w-5 h-5" />
-                    <span>{user.username}</span>
+                  <span>{user.username}</span>
                   </>
                 ) : (
                   <>
                     <LogOut className="w-5 h-5" />
-                    <span>Login</span>
+                  <span>Login</span>
                   </>
                 )}
               </NavLink>

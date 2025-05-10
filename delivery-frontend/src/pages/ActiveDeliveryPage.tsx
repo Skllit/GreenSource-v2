@@ -134,27 +134,27 @@ export default function ActiveDeliveryPage() {
             >
               <div className="p-6">
                 <div className="flex justify-between items-start mb-6">
-                  <div>
+                <div>
                     <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-                      Order #{delivery.orderId}
-                    </h2>
+                    Order #{delivery.orderId}
+                  </h2>
                     <div className="flex items-center mt-1 text-sm text-gray-600 dark:text-gray-400">
                       <Calendar className="w-4 h-4 mr-1" />
-                      {new Date(delivery.createdAt).toLocaleDateString()}
+                    {new Date(delivery.createdAt).toLocaleDateString()}
                     </div>
-                  </div>
-                  <span
+                </div>
+                <span
                     className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      delivery.status === "DELIVERED"
+                    delivery.status === "DELIVERED"
                         ? "bg-emerald-100 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-400"
-                        : delivery.status === "CANCELLED"
+                      : delivery.status === "CANCELLED"
                         ? "bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-400"
                         : "bg-amber-100 dark:bg-amber-900/20 text-amber-800 dark:text-amber-400"
-                    }`}
-                  >
-                    {delivery.status}
-                  </span>
-                </div>
+                  }`}
+                >
+                  {delivery.status}
+                </span>
+              </div>
 
                 <div className="space-y-6">
                   <div className="space-y-4">
@@ -165,8 +165,8 @@ export default function ActiveDeliveryPage() {
                       <div>
                         <h3 className="font-medium text-gray-900 dark:text-white">Pickup Location</h3>
                         <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                          {delivery.pickupAddress}
-                        </p>
+                    {delivery.pickupAddress}
+                  </p>
                         <div className="flex items-center mt-2 text-sm text-gray-600 dark:text-gray-400">
                           <User className="w-4 h-4 mr-1" />
                           {delivery.farmerId}
@@ -175,8 +175,8 @@ export default function ActiveDeliveryPage() {
                           <Phone className="w-4 h-4 mr-1" />
                           {delivery.farmerPhoneNumber}
                         </div>
-                      </div>
-                    </div>
+                  </div>
+                </div>
 
                     <div className="flex justify-center">
                       <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -189,8 +189,8 @@ export default function ActiveDeliveryPage() {
                       <div>
                         <h3 className="font-medium text-gray-900 dark:text-white">Delivery Location</h3>
                         <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                          {delivery.deliveryAddress}
-                        </p>
+                    {delivery.deliveryAddress}
+                  </p>
                         <div className="flex items-center mt-2 text-sm text-gray-600 dark:text-gray-400">
                           <User className="w-4 h-4 mr-1" />
                           {delivery.consumerId}
@@ -200,17 +200,17 @@ export default function ActiveDeliveryPage() {
                           {delivery.consumerPhoneNumber}
                         </div>
                       </div>
-                    </div>
                   </div>
+                </div>
 
                   <div className="flex gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
-                    <button
+                  <button
                       onClick={() => window.location.href = `/delivery/${delivery._id}`}
                       className="flex-1 flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-4 py-2 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"
-                    >
+                  >
                       <Eye className="w-4 h-4" />
                       <span>View Details</span>
-                    </button>
+                  </button>
                     {delivery.status !== "CANCELLED" && delivery.status !== "DELIVERED" && (
                       <button
                         onClick={() => handleCancel(delivery._id)}

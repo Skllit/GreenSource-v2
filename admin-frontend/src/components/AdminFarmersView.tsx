@@ -326,10 +326,10 @@ export default function AdminFarmersView() {
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20 flex items-center justify-center">
                   <span className="text-emerald-600 dark:text-emerald-400 font-semibold text-lg">
-                    {farmer.first_name.charAt(0)}
-                    {farmer.last_name.charAt(0)}
-                  </span>
-                </div>
+                      {farmer.first_name.charAt(0)}
+                      {farmer.last_name.charAt(0)}
+                    </span>
+                  </div>
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
                     {farmer.first_name} {farmer.last_name}
@@ -342,12 +342,12 @@ export default function AdminFarmersView() {
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-400">
                     <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
                     Verified
-                  </span>
+                    </span>
                 ) : (
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-400">
                     <XCircle className="w-3.5 h-3.5 mr-1" />
                     Unverified
-                  </span>
+                    </span>
                 )}
               </div>
             </div>

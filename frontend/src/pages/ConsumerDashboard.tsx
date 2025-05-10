@@ -48,49 +48,50 @@ const ConsumerDashboard = ({ children }: { children: React.ReactNode }) => {
 
   const menuItems = [
     {
-      icon: <Package className="w-5 h-5" />,
+      icon: <Package className="w-5 h-4" />,
       label: "Products",
       path: "/consumer/products",
       description: "Browse fresh produce",
       badge: "New",
     },
     {
-      icon: <ShoppingCart className="w-5 h-5" />,
+      icon: <ShoppingCart className="w-5 h-4" />,
       label: "Cart",
       path: "/consumer/cart",
       description: "View your cart",
       badge: "2",
     },
     {
-      icon: <Clock className="w-5 h-5" />,
+      icon: <Clock className="w-5 h-4" />,
       label: "Orders",
       path: "/consumer/orders",
       description: "Track your orders",
     },
     {
-      icon: <Heart className="w-5 h-5" />,
+      icon: <Heart className="w-5 h-4" />,
       label: "Saved",
       path: "/consumer/saved",
       description: "Your wishlist",
     },
     {
-      icon: <User className="w-5 h-5" />,
+      icon: <User className="w-5 h-4" />,
       label: "Profile",
       path: "/consumer/profile",
       description: "Manage your account",
     },
     {
-      icon: <Activity className="w-5 h-5" />,
-      label: "Market Prices",
-      path: "/consumer/market-prices",
-      description: "Current market rates",
-    },
-    {
-      icon: <Users className="w-5 h-5" />,
+      icon: <Users className="w-5 h-4" />,
       label: "Find Farmers",
       path: "/consumer/find-farmers",
       description: "Connect with farmers",
     },
+    {
+      icon: <Activity className="w-5 h-4" />,
+      label: "Market Prices",
+      path: "/consumer/market-prices",
+      description: "Current market rates",
+    },
+
   ];
 
   const toggleSidebar = () => {

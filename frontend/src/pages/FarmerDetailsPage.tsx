@@ -203,7 +203,7 @@ const FarmerDetailsPage: React.FC = () => {
                   <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
                   <p className="text-gray-600 text-sm mt-1">{product.description}</p>
                   <div className="mt-2 flex justify-between items-center">
-                    <span className="text-green-600 font-semibold">${product.price.toFixed(2)}</span>
+                    <span className="text-green-600 font-semibold">₹{product.price.toFixed(2)}</span>
                     <span className="text-gray-500 text-sm">
                       {product.quantity} {product.unit}
                     </span>

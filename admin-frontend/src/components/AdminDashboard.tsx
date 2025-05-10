@@ -208,13 +208,13 @@ const AdminDashboard = ({ children }: { children: React.ReactNode }) => {
                 </p>
               </div>
             </div>
-            <button
-              onClick={handleSignout}
+              <button
+                onClick={handleSignout}
               className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-xl transition-all duration-200 shadow-md hover:shadow-lg"
-            >
+              >
               <LogOut className="w-4 h-4 mr-2" />
-              Sign Out
-            </button>
+                Sign Out
+              </button>
           </div>
         </header>
 

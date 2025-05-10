@@ -373,7 +373,7 @@ export default function AdminAnalytics() {
           </div>
           <div className="text-3xl font-bold">
             ₹{analytics.orders.adminCommission.toFixed(2)}
-          </div>
+              </div>
         </div>
       </div>
     </div>

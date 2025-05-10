@@ -146,21 +146,21 @@ const Login = () => {
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <Mail className="h-5 w-5 text-gray-400" />
                     </div>
-                    <input
-                      type="email"
-                      id="identifier"
-                      name="identifier"
-                      required
-                      autoFocus
-                      value={formData.identifier}
-                      onChange={handleInputChange}
+                  <input
+                    type="email"
+                    id="identifier"
+                    name="identifier"
+                    required
+                    autoFocus
+                    value={formData.identifier}
+                    onChange={handleInputChange}
                       className={`w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 border ${
-                        validationErrors.identifier
+                      validationErrors.identifier
                           ? "border-red-500 dark:border-red-400"
                           : "border-gray-200 dark:border-gray-600"
                       } rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 focus:border-transparent transition-all duration-200 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400`}
                       placeholder="Enter your email"
-                    />
+                  />
                   </div>
                   {validationErrors.identifier && (
                     <p className="mt-1 text-sm text-red-500 dark:text-red-400">
@@ -180,17 +180,17 @@ const Login = () => {
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <Lock className="h-5 w-5 text-gray-400" />
                     </div>
-                    <input
-                      type="password"
-                      id="password"
-                      name="password"
-                      required
-                      autoComplete="current-password"
-                      value={formData.password}
-                      onChange={handleInputChange}
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    autoComplete="current-password"
+                    value={formData.password}
+                    onChange={handleInputChange}
                       className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 focus:border-transparent transition-all duration-200 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                       placeholder="Enter your password"
-                    />
+                  />
                   </div>
                 </div>
               </div>
@@ -223,8 +223,8 @@ const Login = () => {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              © 2024 GreenSource Marketplace. All rights reserved.
-            </p>
+                © 2024 GreenSource Marketplace. All rights reserved.
+              </p>
           </div>
         </div>
       </footer>

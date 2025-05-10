@@ -250,26 +250,26 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </span>
           </div>
           <div className="flex justify-between items-center mb-2">
-            <span className="text-lg font-semibold text-blue-600">
-              ${product.currentPrice.toFixed(2)}
-              <span className="text-xs text-gray-500">/{product.unit}</span>
-            </span>
             <span className="text-xs text-gray-500">
               Category: {product.category}
             </span>
           </div>
-          <button
-            className={`w-full py-2 rounded-md transition-colors ${
-              isAdding
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700 text-white"
-            }`}
-            onClick={handleAddToCart}
-            disabled={isAdding}
-            aria-label="Add to cart"
-          >
-            {isAdding ? "Adding..." : "Add to Cart"}
-          </button>
+          <div className="mt-2 flex justify-between items-center">
+            <span className="text-lg font-bold text-green-600">
+              ₹{product.currentPrice.toFixed(2)}
+            </span>
+            <button
+              onClick={handleAddToCart}
+              disabled={isAdding}
+              className={`w-full py-2 rounded-md transition-colors ${
+                isAdding
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-green-500 hover:bg-green-600 text-white"
+              }`}
+            >
+              {isAdding ? "Adding..." : "Add to Cart"}
+            </button>
+          </div>
         </div>
       </div>
       <Toaster position="bottom-right" />

@@ -269,8 +269,8 @@ export default function OrderDetailsPage() {
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                  Order #{order._id}
-                </h2>
+              Order #{order._id}
+            </h2>
                 <div className="flex items-center text-gray-600 dark:text-gray-400">
                   <Calendar className="w-4 h-4 mr-2" />
                   <span>Placed on {new Date(order.createdAt).toLocaleDateString()}</span>
@@ -297,7 +297,7 @@ export default function OrderDetailsPage() {
               <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                   Order Details
-                </h3>
+              </h3>
                 <div className="space-y-4">
                   {order.items.map((item) => (
                     <div
@@ -311,23 +311,23 @@ export default function OrderDetailsPage() {
                         <div>
                           <p className="font-medium text-gray-900 dark:text-white">
                             {productNames[item.productId] || "Unknown Product"}
-                          </p>
+                      </p>
                           <p className="text-sm text-gray-600 dark:text-gray-400">
                             Quantity: {item.quantity}
-                          </p>
+                      </p>
                         </div>
                       </div>
-                      <p className="font-medium text-gray-900 dark:text-white">
-                        ${item.totalPrice.toFixed(2)}
-                      </p>
+                      <div className="text-right">
+                        <p className="font-medium">
+                          ₹{item.totalPrice.toFixed(2)}
+                        </p>
+                      </div>
                     </div>
                   ))}
-                  <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <div className="border-t pt-3 mt-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-600 dark:text-gray-400">Total</span>
-                      <span className="text-lg font-bold text-gray-900 dark:text-white">
-                        ${order.totalAmount.toFixed(2)}
-                      </span>
+                      <span className="font-semibold">Total Amount</span>
+                      <span>₹{order.totalAmount.toFixed(2)}</span>
                     </div>
                   </div>
                 </div>

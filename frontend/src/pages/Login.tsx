@@ -77,6 +77,7 @@ const Login: React.FC<LoginProps> = ({ userType }) => {
     };
 
     try {
+      // First, authenticate with the auth service
       const response = await axios.post(
         "http://localhost:3800/api/auth/login",
         loginData,
@@ -86,6 +87,8 @@ const Login: React.FC<LoginProps> = ({ userType }) => {
           },
         }
       );
+
+      // Validate the token
       const validateResponse = await axios.get(
         "http://localhost:3800/api/auth/validate",
         {
@@ -95,37 +98,50 @@ const Login: React.FC<LoginProps> = ({ userType }) => {
           },
         }
       );
-      console.log(response.data, validateResponse.data);
-      let url;
-      if (formData.userType === "consumer") {
-        url = `http://localhost:3806/api/customers/login`;
-      } 
-      else if (formData.userType === "farmer") {
-        url = `http://localhost:3805/api/login`;
-      }
 
-      let responseData: AxiosResponse<never, never>;
-     
-      if (url) {
-       
-        responseData = await axios.post(url, loginData, {
+      // Get user profile from the appropriate service
+      let userProfile: AxiosResponse | undefined;
+      if (formData.userType === "consumer") {
+        userProfile = await axios.get(
+          `http://localhost:3806/api/customers/${formData.identifier}`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${response.data.token}`,
+            },
+          }
+        );
+      } else if (formData.userType === "farmer") {
+        userProfile = await axios.get(
+          `http://localhost:3805/api/farmers/${formData.identifier}`,
+          {
           headers: {
             "Content-Type": "application/json",
-          },
-        });
-        console.log(responseData.data);
-      } else {
-        throw new Error("URL not defined for the specified user type");
+              Authorization: `Bearer ${response.data.token}`,
+            },
+          }
+        );
       }
 
-      if (response.data && response.data.token && responseData.data) {
+      if (!userProfile) {
+        throw new Error("Failed to fetch user profile");
+      }
+
+      if (response.data && response.data.token && userProfile.data) {
+        // Combine auth data with user profile data
+        const userData = {
+          ...response.data.user,
+          ...userProfile.data.data,
+        };
+
         dispatch({
           type: "auth/loginSuccess",
-          payload: response.data,
+          payload: {
+            token: response.data.token,
+            user: userData,
+          },
         });
-        //  toast.success("Logged in successfully!", {
-        //   position: "bottom-center"
-        // });
+
         if (formData.userType === "consumer") {     
           navigate("/consumer/products");
         } else {
@@ -133,6 +149,7 @@ const Login: React.FC<LoginProps> = ({ userType }) => {
         }
       }
     } catch (error) {
+      console.error("Login error:", error);
       dispatch(
         loginFailure(error instanceof Error ? error.message : "Login failed")
       );

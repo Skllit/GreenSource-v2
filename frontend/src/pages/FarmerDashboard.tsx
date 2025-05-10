@@ -61,24 +61,24 @@ const FarmerDashboard = ({ children }: { children: React.ReactNode }) => {
       description: "View and manage orders",
       badge: "2",
     },
-    {
-      icon: <BarChart3 className="w-5 h-5" />,
-      label: "Analytics",
-      path: "/farmer/analytics",
-      description: "View sales and insights",
-    },
+    // {
+    //   icon: <BarChart3 className="w-5 h-5" />,
+    //   label: "Analytics",
+    //   path: "/farmer/analytics",
+    //   description: "View sales and insights",
+    // },
     {
       icon: <DollarSign className="w-5 h-5" />,
       label: "Earnings",
       path: "/farmer/earnings",
       description: "Track your income",
     },
-    {
-      icon: <Calendar className="w-5 h-5" />,
-      label: "Schedule",
-      path: "/farmer/schedule",
-      description: "Manage availability",
-    },
+    // {
+    //   icon: <Calendar className="w-5 h-5" />,
+    //   label: "Schedule",
+    //   path: "/farmer/schedule",
+    //   description: "Manage availability",
+    // },
     {
       icon: <User className="w-5 h-5" />,
       label: "Profile",

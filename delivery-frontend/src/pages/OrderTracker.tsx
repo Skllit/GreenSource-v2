@@ -121,9 +121,9 @@ export function OrderTracker({ order, status }: OrderTrackerProps) {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Current Status:{" "}
+          Current Status:{" "}
               <span className="font-medium text-gray-900 dark:text-white">{order.status}</span>
-            </p>
+        </p>
             <div className="flex items-center mt-1 text-xs text-gray-500 dark:text-gray-400">
               <Clock className="w-3 h-3 mr-1" />
               <span>Last updated: {new Date(order.updatedAt).toLocaleString()}</span>

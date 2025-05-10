@@ -209,6 +209,28 @@ const Signup = () => {
           }
         );
         console.log('Farmer data saved:', responseData.data);
+      } else if (userType === "consumer") {
+        // Create consumer record
+        responseData = await axios.post(
+          "http://localhost:3806/api/customers",
+          {
+            email: formData.email,
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            phone: formData.phone,
+            addresses: showAddressForm ? [formData.address] : [],
+            cart: [],
+            orders: [],
+            wishlist: []
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${response.data.token}`,
+            },
+          }
+        );
+        console.log('Consumer data saved:', responseData.data);
       }
 
       dispatch(signupSuccess(response.data));
@@ -492,7 +514,7 @@ const Signup = () => {
                       >
                         <option value="">Select Sub-Category</option>
                         {selectedCategory && 
-                          PRODUCT_CATEGORIES[selectedCategory as keyof typeof PRODUCT_CATEGORIES].map((subCategory) => (
+                          Object.values(PRODUCT_CATEGORIES[selectedCategory as keyof typeof PRODUCT_CATEGORIES]).map((subCategory: string) => (
                             <option key={subCategory} value={subCategory}>
                               {subCategory.charAt(0).toUpperCase() + subCategory.slice(1)}
                             </option>
